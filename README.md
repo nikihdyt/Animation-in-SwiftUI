@@ -2,12 +2,25 @@
 
 #### Table of contents
 1. [Principle](#principle)
-2. [Transition](#Transition)
+2. [Explicit & Implicit Animation](#explicit-&-implicit-animation)
 3. [Animation Types](#animation-types)
-4. [Advanced Animations](#Advanced-Animations)
-5. [Canvas](#Canvas)
-6. [Positioning](#Positioning)
-7. [Animatable Protocol](#Animatable Protocol)
+4. [Custom Timing Curves](#custom-timing-curves)
+5. [Transition](#transition)
+6. [Matched Geometry Effect](#matchedGeometryEffect)
+7. [TimelineView](#timelineView)
+8. [Graphics](#graphics)
+	- [Shapes](##shapes)
+	- [Canvas (iOS 15+)](##canvas-(iOS-15+))
+ 	- [Gradients](##gradients)
+10. [Positioning](#positioning)
+	- [Offset](##offset)
+ 	- [Inset](##inset)
+  	- [Position](##position)
+   	- [Geometry Reader](##get-the-device-screen-size?)
+12. [Visual Effects](#visual-effects)
+13. [Scroll Effect](#scroll-effect)
+14. [Common Animation Pattern](#common-animation-pattern)
+15. [Others](#others)
 
 # Principle
 - **State-driven animations**
@@ -218,7 +231,7 @@ struct CardView: View {
 - Only 1 view should be `isSource: true` at a time
 - Always wrap with `withAnimation()`
 
-# TimelineView(.animation)
+# TimelineView
 - A view that updates its content based on a timeline schedule
 - Automatically refreshes content at specified intervals
 - Perfect for animations, clocks, timers, and live data updates
@@ -445,7 +458,7 @@ Canvas { context, size in
 - **Sets the absolute position of the center of the view** inside its _parent’s coordinate_ space
 - Affects where the view “lives” in the layout tree.
 - Doesn’t reserve space on its original spot
-## Inset in SwiftUI
+## Inset
 1. Safe Area Insets
 ```swift
 VStack {
@@ -595,7 +608,7 @@ var animationValue: CGFloat {
     }
 }
 ```
-# Other
+# Others
 - Inset = the inner margin, i.e., space pushed inward. With UIEdgeInsets, you can define top, bottom, left, and right values.
   - Inset: the frame moves inward, making the visible image appear smaller.
   - Offset: you shift the drawing (like moving a painting) left, right, up, or down.
